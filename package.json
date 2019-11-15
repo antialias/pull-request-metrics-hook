@@ -1,0 +1,44 @@
+{
+  "name": "pull-request-metrics-hook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run build && serverless deploy",
+    "install-webhook": "scripts/install-webhook.sh",
+    "start": "node build/start.js",
+    "build": "babel src --out-dir build/src",
+    "dev": "babel-node src/start.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-http": "^1.5.16",
+    "dotenv-safe": "^8.1.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "hot-shots": "^6.8.2",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "node-fetch": "^2.6.0",
+    "object-path-immutable": "^4.0.2",
+    "serverless-http": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "1.19.1",
+    "serverless": "^1.57.0",
+    "serverless-dotenv-plugin": "^2.1.1"
+  }
+}

@@ -1,0 +1,34 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+---
+service: compass-beta-searchactions-prhook
+plugins:
+  - serverless-dotenv-plugin
+# app and org for use with dashboard.serverless.com
+app: pull-request-custom-metrics
+org: antialias
+provider:
+  name: aws
+  runtime: nodejs10.x
+  role: "arn:aws:iam::149465543054:\
+         role/github-add-user-development-us-east-1-lambdaRole"
+functions:
+  prhook:
+    handler: build/src/serverless.handler
+    layers:
+      - arn:aws:lambda:us-east-1:464622532012:layer:Datadog-Node10-x:8
+    events:
+      - http:
+          path: /
+          method: post

@@ -1,0 +1,14 @@
+---
+extends:
+  - eslint:recommended
+  - plugin:prettier/recommended
+parser: babel-eslint
+plugins: ["prettier"]
+rules:
+  prettier/prettier: error
+  no-shadow: error
+  arrow-parens: ["error", "as-needed"]
+  arrow-body-style: ["error", "as-needed"]
+  require-atomic-updates: "off"
+env:
+  node: true
